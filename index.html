@@ -3,47 +3,94 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>IvorySync</title>
-    <meta name="description" content="IvorySync — modern scheduling for private clubs." />
+    <title>IvorySync — Custom Scheduling Software</title>
+    <meta name="description" content="Welcome to IvorySync — your custom scheduling software solution." />
+    <meta name="theme-color" content="#1F2822">
+    <meta property="og:title" content="IvorySync" />
+    <meta property="og:description" content="Welcome to IvorySync — your custom scheduling software solution." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/ivorysync-logo.png" />
+    <meta property="og:url" content="https://ivorysync.com" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <style>
       :root{
-        --ivory:#F8F8F0;
-        --regent:#1F2822; /* Regent Green */
-        --spring:#6CBE45; /* Spring Grass */
+        --regent:#1F2822;     /* Regent Green */
+        --ivory:#F2ECD9;      /* soft ivory that matches the logo's tone */
+        --gold:#C9A25A;       /* warm gold accent */
+        --muted:#DAD3BD;
       }
-      html,body{height:100%;margin:0}
+      *{box-sizing:border-box}
+      html,body{height:100%}
       body{
-        display:flex;align-items:center;justify-content:center;
-        background:var(--ivory);color:var(--regent);
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        margin:0;
+        background:var(--regent);
+        color:var(--ivory);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        display:flex; align-items:center; justify-content:center;
+        padding:28px;
       }
-      .wrap{display:flex;flex-direction:column;align-items:center;gap:18px;padding:24px}
-      .logo{width:240px;max-width:70vw;height:auto}
-      .brand{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:0.2px}
-      .email a{
+      .wrap{
+        width:min(900px, 96vw);
+        text-align:center;
+      }
+      .logo{
+        display:inline-block;
+        border-radius:20px;
+        overflow:hidden;
+      }
+      .logo img{
+        width:min(640px, 92vw);
+        height:auto;
+        display:block;
+        margin:0 auto 14px;
+      }
+      .headline{
+        font-weight:800;
+        font-size:clamp(18px, 2.5vw, 22px);
+        color:var(--muted);
+        letter-spacing:.2px;
+        margin-top:4px;
+      }
+      .cta{
+        margin:22px auto 0;
+      }
+      .btn{
+        display:inline-block;
+        padding:12px 18px;
+        border-radius:14px;
         color:var(--regent);
+        background:var(--ivory);
         text-decoration:none;
-        font-weight:600;
-        font-size:clamp(16px,2.5vw,20px);
-        border:2px solid var(--regent);
-        padding:10px 14px;border-radius:12px;
-        transition:transform .08s ease, background .2s ease, color .2s ease;
+        font-weight:800;
+        border:2px solid var(--ivory);
+        transition: transform .08s ease, background .18s ease, color .18s ease, border-color .18s ease;
       }
-      .email a:hover{transform:translateY(-1px); background:var(--regent); color:var(--ivory);}
-      footer{position:fixed;bottom:10px;left:0;right:0;text-align:center;opacity:.55;font-size:12px}
-      .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;}
+      .btn:hover{
+        transform: translateY(-1px);
+        background:var(--gold);
+        border-color:var(--gold);
+        color:#0b0e0c;
+      }
+      footer{margin-top:28px; opacity:.6; font-size:12px}
+      @media (prefers-color-scheme: light){
+        body{ background:#F7F6ED; color:#1F2822;}
+        .headline{ color:#3e4c44;}
+        .btn{ color:#1F2822; border-color:#1F2822; background:transparent;}
+        .btn:hover{ background:#1F2822; color:#fff; border-color:#1F2822;}
+      }
     </style>
   </head>
   <body>
-    <main class="wrap" aria-label="IvorySync landing">
-      <img class="logo" src="/assets/ivorysync-logo.svg" alt="IvorySync logo" />
-      <div class="brand" aria-hidden="true">IvorySync</div>
-      <div class="email">
-        <a href="mailto:ivory.sync@gmail.com" aria-label="Email IvorySync at ivory.sync@gmail.com">ivory.sync@gmail.com</a>
+    <main class="wrap" role="main" aria-label="IvorySync landing">
+      <div class="logo">
+        <img src="/assets/ivorysync-logo.png" alt="IvorySync logo — Golf and Exclusive Clubs">
       </div>
+      <div class="headline">Welcome to IvorySync — your custom scheduling software solution.</div>
+      <div class="cta">
+        <a class="btn" href="mailto:ivory.sync@gmail.com" aria-label="Email IvorySync at ivory.sync@gmail.com">Email us — ivory.sync@gmail.com</a>
+      </div>
+      <footer>© <span id="y"></span> IvorySync</footer>
     </main>
-    <footer>© <span id="y"></span> IvorySync</footer>
     <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
   </body>
 </html>
