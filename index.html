@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IvorySync</title>
+    <meta name="description" content="IvorySync — modern scheduling for private clubs." />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <style>
+      :root{
+        --ivory:#F8F8F0;
+        --regent:#1F2822; /* Regent Green */
+        --spring:#6CBE45; /* Spring Grass */
+      }
+      html,body{height:100%;margin:0}
+      body{
+        display:flex;align-items:center;justify-content:center;
+        background:var(--ivory);color:var(--regent);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      }
+      .wrap{display:flex;flex-direction:column;align-items:center;gap:18px;padding:24px}
+      .logo{width:240px;max-width:70vw;height:auto}
+      .brand{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:0.2px}
+      .email a{
+        color:var(--regent);
+        text-decoration:none;
+        font-weight:600;
+        font-size:clamp(16px,2.5vw,20px);
+        border:2px solid var(--regent);
+        padding:10px 14px;border-radius:12px;
+        transition:transform .08s ease, background .2s ease, color .2s ease;
+      }
+      .email a:hover{transform:translateY(-1px); background:var(--regent); color:var(--ivory);}
+      footer{position:fixed;bottom:10px;left:0;right:0;text-align:center;opacity:.55;font-size:12px}
+      .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;}
+    </style>
+  </head>
+  <body>
+    <main class="wrap" aria-label="IvorySync landing">
+      <img class="logo" src="/assets/ivorysync-logo.svg" alt="IvorySync logo" />
+      <div class="brand" aria-hidden="true">IvorySync</div>
+      <div class="email">
+        <a href="mailto:ivory.sync@gmail.com" aria-label="Email IvorySync at ivory.sync@gmail.com">ivory.sync@gmail.com</a>
+      </div>
+    </main>
+    <footer>© <span id="y"></span> IvorySync</footer>
+    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  </body>
+</html>
